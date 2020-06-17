@@ -47,10 +47,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'date',
                 [
                     'label'=>'medical',
-                    'attribute'=>'id',
+                    'attribute'=>'name',
                     'format'=>'raw',
                     'value'=>function($dataProvider){
                         return Html::a('Add Record',Url::to(['record/data']),['data-params'=>['id'=>$dataProvider['id']],'data-method'=>'POST', 'target'=> '_blank']);
+                        
                     },
 
                 ],

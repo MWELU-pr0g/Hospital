@@ -35,7 +35,7 @@ class Doctors extends \yii\db\ActiveRecord
         return [
             [['diagnosis', 'test', 'test_result'], 'required'],
             [['diagnosis', 'test', 'test_result'], 'string', 'max' => 255],
-            [['patientId'], 'integer'],
+            [['patientId'],'safe'],
             
 
         ];
@@ -51,7 +51,7 @@ class Doctors extends \yii\db\ActiveRecord
             'diagnosis' => 'Diagnosis',
             'test' => 'Test',
             'test_result' => 'Test Result',
-            'patientId'=>'patientId'
+            'patientId'=>'patient Name'
         ];
     }
     public function result()
@@ -71,6 +71,21 @@ class Doctors extends \yii\db\ActiveRecord
     public function getresult($id)
     {
         $model = Yii::$app->db->createCommand('SELECT * FROM doctors WHERE id=:id')->bindValue('id', $id)->queryOne();
+
+        return $model;
+
+
+        $data =  new ArrayDataProvider(
+            [
+                'allModels' => $model,
+            ]
+        );
+
+        return $data;
+    }
+    public function getname($id)
+    {
+        $model = Yii::$app->db->createCommand('SELECT name FROM doctors WHERE id=:id')->bindValue('id', $id)->queryOne();
 
         return $model;
 

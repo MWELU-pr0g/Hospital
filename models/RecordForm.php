@@ -71,5 +71,19 @@ class RecordForm extends ActiveRecord
         );
         return $data;
     }
-   
+    public function getname($id)
+    {
+        $model = Yii::$app->db->createCommand('SELECT name FROM bio_data WHERE id=:id')->bindValue('name',$id)->queryOne();
+        
+        return $model;
+
+        // print_r($model);exit;
+
+        $data =  new ArrayDataProvider(
+            [
+                'models' => $model,
+            ]
+        );
+        return $data;
+    }
 }

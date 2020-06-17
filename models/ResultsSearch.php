@@ -18,7 +18,7 @@ class ResultsSearch extends Doctors
     public function rules()
     {
         return [
-            [['patientId'], 'integer'],
+            [['patientId'], 'safe'  ],
             [['diagnosis', 'test', 'test_result'], 'safe'],
         ];
     }

@@ -283,6 +283,7 @@ class RecordController extends Controller
             'model' => $data
         ]);
     }
+
     public function actionData()
     {
         $id = Yii::$app->request->post('id');
@@ -307,30 +308,11 @@ class RecordController extends Controller
             'dataProvider' => $medical,
         ]);
     }
+
+
+
+    
 }
 
 
-    // public function actionData()
-    // {
-    //     $id = Yii::$app->request->post('id');
-
-
-    //     $user = RecordForm::findOne($id);
-    //     $medical = new Doctors();
-    //     // $medical->patientId = $user->id;
-
-    //     $medical->load(Yii::$app->request->post());
-    //     if ($medical->save()) {
-    //         $results = $medical->result();
-
-    //         return $this->render('medical', [
-    //             'dataProvider' => $results,
-    //         ]);
-    //     }
-    //     return $this->render('doctors', [
-    //         'user' => $user,
-    //         'model' => $medical,
-    //         'dataProvider' => $medical,
-    //     ]);
-    // }
 

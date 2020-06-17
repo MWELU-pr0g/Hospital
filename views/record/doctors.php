@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
-        <?= $form->field($model, 'patientId')->hiddenInput(['value' => $user->id])->label(false);
+        <?= $form->field($model, 'patientId')->hiddenInput(['value' => $user->name])->label(false);
 
     ?>
     <?= $form->field($model, 'diagnosis')->textarea()
