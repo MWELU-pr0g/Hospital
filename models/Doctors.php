@@ -47,11 +47,11 @@ class Doctors extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+            'id' => 'IDS',
             'diagnosis' => 'Diagnosis',
             'test' => 'Test',
             'test_result' => 'Test Result',
-            'patientId'=>'patient Name'
+            'patientId'=>'Patient Name'
         ];
     }
     public function result()
